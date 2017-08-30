@@ -31,7 +31,7 @@ gamma = 0.1 #this is size of step we take each time we need to reduce error.
 lamda = 0.1 #this is the penalization value for regularization.
 N = len(custorderpivot) # No of users
 M = len(custorderpivot.columns) # of products.
-steps = 200 #how many times we loop through.
+steps = 50 #how many times we loop through.
 TopN = 10 # Number of recommendations to show
 
 
