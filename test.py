@@ -44,8 +44,8 @@ Y_predict = classifier.predict(X_test)
 cm = confusion_matrix(Y_test,Y_predict)
 
 
-cv1 = CountVectorizer()
-Ynew = cv1.fit_transform(["test 293 test test"])
-Ypred = classifier.predict(Ynew)
+#cv1 = CountVectorizer()
+#Ynew = cv1.fit_transform(["test 293 test test"])
+#Ypred = classifier.predict(Ynew)
 
 
