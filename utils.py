@@ -11,6 +11,3 @@ def datetimeInFormat(timetoformat):
     nowtime = timetoformat.timetuple()
     ftime = time.strftime(dateformat,nowtime)
     return ftime
-
-
-
