@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
 
-filename ='clusterorder.dat'
+filename ='../data/clusterorder.dat'
 clustervariables = [1,2]
 seperator='|'
 priceenabled= True

@@ -17,7 +17,7 @@ class CustomerClusters:
     '''
     We do initialization of variables only if local file is used. If not, cassandra connection should be used.
     '''
-    filename ='clusterorder.dat'
+    filename ='data/clusterorder.dat'
     seperator='|'
     
     '''label of the product, quantity and also the price * quantity column name which is dervied'''
@@ -168,7 +168,12 @@ class CustomerClusters:
         if filename == "-1":
             self.learnclassification(platform,cluster,byPurchaseValue)
             filedata = self._openfiledata(platform,cluster,byPurchaseValue)
+            dictdata = dict(filedata)
+            
         return filedata
+    
+    def _groupbydict(dict):
+        for k,v in gr
     
     def getCustomerCluster(self,customerId, platform='ajio',cluster=None,byPurchaseValue=False):
         customers = dict(self.getAllCustomerClusters(platform,cluster,byPurchaseValue))
@@ -185,8 +190,8 @@ if __name__ == '__main__':
     cluster = CustomerClusters()
     _platform='ajio'
     _cluster='1'
-    _byPurchasevalue=True
-    _nthcustomer =10
+    _byPurchasevalue=False
+    _nthcustomer =90
     output = cluster.learnclassification(platform=_platform,cluster=_cluster,byPurchaseValue=_byPurchasevalue)
     print("Output is {}".format(output))
     customers = cluster.getAllCustomerClusters(_platform,_cluster,_byPurchasevalue)

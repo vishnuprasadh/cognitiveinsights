@@ -7,12 +7,12 @@ import matplotlib as plt
 
 
 #TODO: Place where we will get from cassandra.
-customerdata = pd.read_table('clusterorder.dat',sep="|", header=0,encoding='latin-1',engine='python')
+customerdata = pd.read_table('../data/clusterorder.dat',sep="|", header=0,encoding='latin-1',engine='python')
 #introduce a column to multiply value with item
 customerdata['linevalue']=customerdata['quantity'] * customerdata['price']
 
 #Get all products
-products = pd.read_table('clusterproduct.dat',sep='|',header=0,encoding='latin-1',engine='python')
+products = pd.read_table('../data/clusterproduct.dat',sep='|',header=0,encoding='latin-1',engine='python')
 
 #Do a customer pivot table with user and product having 
 custorderpivot= customerdata.pivot_table(index="customer_id",columns="product_id",values="quantity", aggfunc=np.sum)

@@ -24,7 +24,7 @@ class RecommendProductsByMatrixFactor:
             uniqueidentity = self.__getuniqueid(appid,clusterid,category)
             print(uniqueidentity)
             #TODO: Place where we will get from cassandra.
-            orders = pd.read_table('clusterorder.dat',sep="|", header=0,encoding='latin-1',engine='python')
+            orders = pd.read_table('data/clusterorder.dat',sep="|", header=0,encoding='latin-1',engine='python')
             
             if len(orders)>0:
                 print("Cluster analysis for {} rows in progress".format(len(orders)))
@@ -142,7 +142,7 @@ class RecommendProductsByMatrixFactor:
         toprecommendation = pd.DataFrame.sort_values(predict,['quantity'],ascending=[0])[:topN]   
         
         #TODO: Load product details from DB.
-        products = pd.read_table('clusterproduct.dat',sep='|',header=0,encoding='latin-1',engine='python')
+        products = pd.read_table('data/clusterproduct.dat',sep='|',header=0,encoding='latin-1',engine='python')
         productdetails = products[products["product_id"].isin(toprecommendation.index)]    
         return productdetails
     

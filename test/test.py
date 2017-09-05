@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.naive_bayes import MultinomialNB
 
-address = pd.read_csv('addresses.csv',names=['address1','address2','address3','isvalid'],header=0);
+address = pd.read_csv('../data/addresses.csv',names=['address1','address2','address3','isvalid'],header=0);
 address.head()
 X = address.iloc[:,0:3].values
 Y = address.iloc[:,-1].values

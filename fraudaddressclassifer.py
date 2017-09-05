@@ -19,7 +19,7 @@ class fraudaddress:
             
     def predict(self,address_1,address_2,address_3):
         #TODO: Need to resolve this from a validated source.
-        address = pd.read_csv('addresses.csv',names=['address1','address2','address3','isvalid'],header=0);
+        address = pd.read_csv('data/addresses.csv',names=['address1','address2','address3','isvalid'],header=0);
         
         X = address.iloc[:,0:3].values
         Y = address.iloc[:,-1].values
