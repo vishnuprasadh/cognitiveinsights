@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
 import json
+import os
 
 class CustomerClusters:
     
@@ -143,6 +144,7 @@ class CustomerClusters:
         filedata = ""
         try:
             filename = self._returnfile(platform,cluster,byPurchaseValue)
+            
             with open(file= filename,mode='r',encoding='latin-1') as f:
                 print("Reading file")
                 filedata = json.loads(f.read())
