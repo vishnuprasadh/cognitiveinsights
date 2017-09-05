@@ -145,6 +145,10 @@ class RecommendProductsByMatrixFactor:
         products = pd.read_table('clusterproduct.dat',sep='|',header=0,encoding='latin-1',engine='python')
         productdetails = products[products["product_id"].isin(toprecommendation.index)]    
         return productdetails
+    
+    def getTopRecommendationByCategory(self,userId,topN=10):
+        #TODO: Need to add the logic of filtering by category on top of products we got.
+        return
         
 
 if __name__ == '__main__':
