@@ -15,13 +15,13 @@ import matplotlib as plt
 
 
 #TODO: Place where we will get from cassandra.
-ratings = pd.read_table('u.data',sep="\t", header=0,encoding='latin-1',engine='python',
+ratings = pd.read_table('../data/u.data',sep="\t", header=0,encoding='latin-1',engine='python',
                         names=['user','movieid','rating','date'])
 #introduce a column to multiply value with item
 #ratings['linevalue']=customerdata['quantity'] * customerdata['price']
 
 #Get all products
-movies = pd.read_table('u.item',sep='|',header=1,encoding='latin-1',engine='python',
+movies = pd.read_table('../data/u.item',sep='|',header=1,encoding='latin-1',engine='python',
                        names=['movieid','name','info'], usecols=[0,1,4])
 
 #Do a customer pivot table with user and product having 
