@@ -173,7 +173,7 @@ class CustomerClusters:
         return filedata
     
     def _groupbydict(dict):
-        for k,v in gr
+        return
     
     def getCustomerCluster(self,customerId, platform='ajio',cluster=None,byPurchaseValue=False):
         customers = dict(self.getAllCustomerClusters(platform,cluster,byPurchaseValue))
@@ -191,7 +191,7 @@ if __name__ == '__main__':
     _platform='ajio'
     _cluster='1'
     _byPurchasevalue=False
-    _nthcustomer =90
+    _nthcustomer =12
     output = cluster.learnclassification(platform=_platform,cluster=_cluster,byPurchaseValue=_byPurchasevalue)
     print("Output is {}".format(output))
     customers = cluster.getAllCustomerClusters(_platform,_cluster,_byPurchasevalue)
