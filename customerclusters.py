@@ -165,7 +165,7 @@ class CustomerClusters:
         '''
         filedata = self._openfiledata(platform,cluster,byPurchaseValue)
         #If filenotfound
-        if filename == "-1":
+        if filedata == "-1":
             self.learnclassification(platform,cluster,byPurchaseValue)
             filedata = self._openfiledata(platform,cluster,byPurchaseValue)
             dictdata = dict(filedata)
