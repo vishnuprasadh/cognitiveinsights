@@ -1,0 +1,7 @@
+numpy
+pandas
+sklearn
+matplotlib
+kafka
+cassandra-driver
+flask
