@@ -5,18 +5,16 @@ Created on Thu Aug 31 15:38:05 2017
 
 @author: vishnuhari
 """
+import numpy as np
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer,TfidfTransformer
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
+from sklearn.naive_bayes import GaussianNB,MultinomialNB
 
 
 class fraudaddress:
 
-    import numpy as np
-    import pandas as pd
-    from sklearn.feature_extraction.text import CountVectorizer
-    from sklearn.model_selection import train_test_split
-    from sklearn.metrics import confusion_matrix
-    from sklearn.naive_bayes import GaussianNB
-        
-            
     def predict(self,address_1,address_2,address_3):
         #TODO: Need to resolve this from a validated source.
         address = pd.read_csv('data/addresses.csv',names=['address1','address2','address3','isvalid'],header=0);

@@ -6,9 +6,10 @@ Created on Mon Aug 28 20:38:56 2017
 @author: vishnuhari
 """
 
-from modelConfiguration import ModelConfiguration
+#from .modelConfiguration import ModelConfiguration
 import numpy as np
 import pandas as pd
+
 class RecommendProductsByMatrixFactor:
     
     U= pd.DataFrame()
@@ -84,10 +85,10 @@ class RecommendProductsByMatrixFactor:
         #index we use is the index value of custorderpivot. Note that we also have custorderpivot index is also userIds which
         #is equal to number of users. This we call as user factor matrix(refer we used N here) and is randomly selected.
         # we will apply SGD i.e. stochiastic gradient descent to find the lowest error or best fit now.
-        U = pd.DataFrame(np.random.rand(N,K),index=custorderpivot.index)
+        U = pd.DataFrame(np.random.rand(N,no_of_factors),index=custorderpivot.index)
         
         #Now we prepare the Product factor matrix.
-        P= pd.DataFrame(np.random.rand(M,K),index = custorderpivot.columns)
+        P= pd.DataFrame(np.random.rand(M,no_of_factors),index = custorderpivot.columns)
         
         
         #Now we need to use SGD to loop through predefined number of times to minimize the SGD error.
